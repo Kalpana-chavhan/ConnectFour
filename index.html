@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Connect Four</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+<header class="topbar">
+<h1><i>Connect Four</i></h1>
+<div class="controls">
+<label>
+Mode
+<select id="mode">
+<option value="pvp">Two Players</option>
+<option value="cpu">Play vs CPU (easy)</option>
+</select>
+</label>
+<button id="undo" title="Undo last move">↺ Undo</button>
+<button id="restart">⟳ Restart</button>
+</div>
+</header>
+
+<section class="statusbar">
+<div class="player-info">
+<div id="turnIndicator" class="turnIndicator">Player 1's turn</div>
+<div class="scores">
+<span>Red: <strong id="score1">0</strong></span>
+<span>Yellow: <strong id="score2">0</strong></span>
+</div>
+</div>
+<p class="hint">Click or tap a column to drop a disc. Hover shows preview. Bright, bouncy, and responsive!</p>
+</section>
+
+
+<section class="board-wrap">
+<div id="board" class="board" aria-label="Connect four board" role="grid"></div>
+</section>
+
+
+<footer class="footer">
+<small>Built with ❤️ </small>
+</footer>
+</main>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+<div class="modal-card">
+<h2 id="modalTitle">Player 1 wins!</h2>
+<p id="modalText">Nice connect four!</p>
+<div class="modal-actions">
+<button id="modalRestart">Play again</button>
+<button id="modalClose">Close</button>
+</div>
+</div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
